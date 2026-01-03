@@ -49,7 +49,6 @@
 
     paaApp.controller('NewsController', ['$scope', function ($scope) {
 
-        var currentQuestionIndex = 0;
         $scope.selection = [];
         $scope.userText = "";
         $scope.totalErrors = 0;
@@ -130,8 +129,6 @@
                 $scope.totalOK++;
             }
 
-            $scope.errorDeted = f;
-
             $scope.ss = true;
 
         };
@@ -157,7 +154,6 @@
 
 
         $scope.next = function () {
-            currentQuestionIndex++;
             $scope.questionText = "";
             $scope.note = "";
 
@@ -179,27 +175,19 @@
         };
 
 
-        // toggle selection for a given fruit by name
-        $scope.toggleSelection = function toggleSelection(fruitName) {
-            var idx = $scope.selection.indexOf(fruitName);
+        // Toggle selection for a given answer
+        $scope.toggleSelection = function toggleSelection(answer) {
+            var idx = $scope.selection.indexOf(answer);
 
-            // is currently selected
             if (idx > -1) {
+                // Currently selected - remove it
                 $scope.selection.splice(idx, 1);
-            }
-
-            // is newly selected
-            else {
-                $scope.selection.push(fruitName);
+            } else {
+                // Newly selected - add it
+                $scope.selection.push(answer);
             }
         };
 
     }]);
 
-
 })(angular);
-
-(function () {
-
-
-})();
