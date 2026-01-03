@@ -175,6 +175,25 @@
         </div>
     </section>
 
+    <!-- Answer Evaluation Legend -->
+    <aside ng-if="ss && !textAnswer" class="flex flex-wrap items-center gap-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm mb-8 text-sm">
+        <span class="font-medium text-slate-600">Legenda vyhodnocení:</span>
+        <span class="flex items-center gap-2">
+            <span class="w-4 h-4 rounded border-2 border-green-400 bg-green-50"></span>
+            <span class="text-slate-600">Správně označeno/neoznačeno</span>
+        </span>
+        <span class="flex items-center gap-2">
+            <span class="relative w-4 h-4 rounded border-2 border-red-400 bg-red-50">
+                <span class="absolute inset-0 flex items-center justify-center text-xs text-red-500">✓</span>
+            </span>
+            <span class="text-slate-600">Nemělo být označeno</span>
+        </span>
+        <span class="flex items-center gap-2">
+            <span class="w-4 h-4 rounded border-2 border-red-400 bg-red-50"></span>
+            <span class="text-slate-600">Mělo být označeno</span>
+        </span>
+    </aside>
+
     <!-- Footer -->
     <footer class="border-t border-slate-200 pt-6">
         <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
