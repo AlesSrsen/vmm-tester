@@ -496,7 +496,7 @@ otazky.push({
 });
 
 otazky.push({
-    otazka: "Výpočet L<sub>p</sub>",
+    otazka: "Výpočet L<sub>p</sub> vzdálenosti má časovou složitost:",
     odpovedi: {
         1: "O(pn<sup>2</sup>)", 
         2: "O(n<sup>2</sup>)", 
@@ -720,7 +720,7 @@ otazky.push({
     odpovedi: {
         1: "O(nlogn)", 
         2: "O(n<sup>2</sup>)", 
-        3: "O(n<sup>2</sup>)O(n2).O(d), kde O(d) je složitost ground distance", 
+        3: "O(n<sup>2</sup>).O(d), kde O(d) je složitost ground distance", 
         4: "O(n)"
     },
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
@@ -834,4 +834,227 @@ otazky.push({
         4: "chceme výrazně rychlejší vyhledávání za cenu malého snížení přesnosti vyhledávání"
     },
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
+});
+
+// === Missing / extra questions from the new HTML notes ===
+// (Wrong answers marked as "made up" are plausible distractors, but not guaranteed to be real exam options.)
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Termín Retrieval Effectiveness znamená:",
+    odpovedi: {
+        1: "efektivita vyhledávače ve smyslu kvality výsledku vyhledávání",
+        2: "efektivita vyhledávače ve smyslu rychlosti vyhledávání", // made up (this is retrieval efficiency)
+        3: "efektivita vyhledávače ve smyslu kvality ovládání GUI", // made up
+        4: "efektivita vyhledávače ve smyslu úspornosti indexu" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Na co se používá „text-based retrieval“?",
+    odpovedi: {
+        1: "vyhledávání multimédií pouze podle textové anotace (metadat) a textových signálů",
+        2: "vyhledávání multimédií přímo podle vizuálního/akustického obsahu bez anotace", // made up (content-based)
+        3: "vyhledávání pouze podle podobnosti histogramů barev", // made up
+        4: "vyhledávání pouze podle komprese/kodeku (např. MPEG)" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co je filtrace (filtering) ve vyhledávání?",
+    odpovedi: {
+        1: "formulace fixního (stálého) vyhledávacího záměru nad dynamickým obsahem (např. proud dokumentů)",
+        2: "explicitní formulace jednorázového (one-shot) vyhledávacího záměru", // made up (to je dotaz/query)
+        3: "použití pouze negace v booleovském dotazu", // made up
+        4: "proces komprese indexu pro rychlejší dotazy" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co je to vyhledávání filtrováním?",
+    odpovedi: {
+        1: "dlouhodobé (standing) dotazování nad průběžně přicházejícími daty / dynamickou databází",
+        2: "to samé co jednorázové dotazování (ad-hoc query)", // made up
+        3: "RSS jako jediný způsob filtrování", // made up
+        4: "vyhledávání omezené pouze na metrické indexy" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Anotace multimédia znamená:",
+    odpovedi: {
+        1: "slovní/textový popis (metadata) multimediálního objektu",
+        2: "komprimovanou binární reprezentaci multimédia (např. JPEG bitstream)", // made up
+        3: "množinu SIFT/SURF deskriptorů", // made up
+        4: "hash multimédia určený pro deduplikaci" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Jak typicky vyhledává webový vyhledávač multimédia?",
+    odpovedi: {
+        1: "kombinací textových signálů (okolní text, user annotation, anchor text, název souboru) a případně i obsahových metod",
+        2: "výhradně content-based retrieval bez jakékoliv textové informace", // made up
+        3: "výhradně podle MIME typu a velikosti souboru", // made up
+        4: "výhradně pomocí DTW nad audio stopou videa" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co je False hit (false alarm)?",
+    odpovedi: {
+        1: "objekt je ve výsledku testovacího systému, ale není ve výsledku referenčního (ground-truth) systému",
+        2: "objekt je v databázi, ale není vůbec indexovatelný", // made up
+        3: "objekt se ve výsledku vyskytne dvakrát (duplicita)", // made up
+        4: "objekt je relevantní a byl správně nalezen" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co je False drop (false dismissal)?",
+    odpovedi: {
+        1: "objekt není ve výsledku testovacího systému, ale ve výsledku referenčního (ground-truth) systému je",
+        2: "objekt je ve výsledku testovacího systému, ale není relevantní", // made up (to je false hit / false positive)
+        3: "objekt není v databázi a proto nemůže být vrácen", // made up
+        4: "objekt je relevantní a byl vždy nalezen" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Top-K – kolik výsledků zobrazí?",
+    odpovedi: {
+        1: "zobrazí právě K nejlépe ohodnocených (nejpodobnějších) výsledků",
+        2: "zobrazí všechny výsledky do vzdálenosti K", // made up (to je range query s prahem)
+        3: "zobrazí náhodných K výsledků", // made up
+        4: "zobrazí K výsledků pouze v booleovském modelu" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] U kterých textových modelů vyhledávání se typicky používá invertovaný index?",
+    odpovedi: {
+        1: "pouze booleovský model", // made up
+        2: "pouze vektorový model", // made up
+        3: "jak booleovský, tak vektorový model",
+        4: "žádný – invertovaný index se nepoužívá v textovém vyhledávání" // made up
+    },
+    spravne: {1: 0, 2: 0, 3: 1, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Query-by-example znamená:",
+    odpovedi: {
+        1: "dotaz je tvořen přímo ukázkovým dokumentem/objektem (příklad), podle kterého se hledají podobné",
+        2: "dotaz je tvořen pouze booleovským výrazem AND/OR/NOT", // made up
+        3: "dotaz je vždy textová anotace multimédia", // made up
+        4: "dotaz je vždy shluk (cluster) objektů a hledají se shluky" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co je to kodek?",
+    odpovedi: {
+        1: "složenina „kodér + dekodér“ (coder/decoder)",
+        2: "pouze kompresní algoritmus bez dekódování", // made up
+        3: "databázový index pro multimédia", // made up
+        4: "síťový protokol pro streamování (např. HTTP)" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co je to MIME?",
+    odpovedi: {
+        1: "Multipurpose Internet Mail Extensions; standard pro označování internet media types (např. Content-Type)",
+        2: "kompresní standard pro obrázky (náhrada JPEG)", // made up
+        3: "metrická vzdálenost nad histogramy", // made up
+        4: "souborový systém pro multimediální databáze" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co je to range query?",
+    odpovedi: {
+        1: "vrací předem neurčený počet objektů do zadaného prahu vzdálenosti (radius) od dotazu",
+        2: "vrací přesně K nejbližších sousedů", // made up (to je kNN)
+        3: "vrací objekty s nejvyšším tf-idf pro daný term", // made up
+        4: "vrací pouze objekty z jedné stránky B-stromu" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co jsou lokální pivoti?",
+    odpovedi: {
+        1: "dynamické objekty volené během indexace (typicky pro konkrétní část indexu) pro konstrukci lower boundů",
+        2: "statické objekty platné po celý život indexu (globální pivoti)", // made up
+        3: "náhodně volené dotazy uživatele během browsing session", // made up
+        4: "centroidy barev v RGB prostoru používané jen pro histogramy" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co je browsing v kontextu multimediálního vyhledávání?",
+    odpovedi: {
+        1: "iterativní průzkum prostoru pomocí série dotazů / navigace nad výsledky (typicky similarity-based)",
+        2: "jednorázový booleovský dotaz nad invertovaným indexem", // made up
+        3: "offline tvorba deskriptorů bez dotazování", // made up
+        4: "pouze stahování multimédií bez vyhledávání" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] TG vs TV (modifikátory) – jaký je rozdíl z hlediska tvaru a T-chyby?",
+    odpovedi: {
+        1: "TG je striktně konkávní SP modifikátor (nižší T-error), TV je striktně konvexní SP modifikátor (vyšší T-error)",
+        2: "TG je striktně konvexní a vždy snižuje T-error více než TV", // made up
+        3: "TG i TV jsou metriky a vždy zachovávají trojúhelníkovou nerovnost", // made up
+        4: "TG i TV jsou pouze normalizace tf-idf vah" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co znamená tf (term frequency) v tf-idf?",
+    odpovedi: {
+        1: "četnost výskytu termu v konkrétním dokumentu (případně její normalizace)",
+        2: "počet dokumentů v kolekci", // made up
+        3: "inverse document frequency", // made up
+        4: "počet různých termů v dotazu" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Co znamená idf (inverse document frequency) v tf-idf?",
+    odpovedi: {
+        1: "míra vzácnosti termu v kolekci; typicky roste, když termu klesá document frequency (df)",
+        2: "četnost výskytu termu v konkrétním dokumentu", // made up
+        3: "čas potřebný pro výpočet invertovaného indexu", // made up
+        4: "pravděpodobnost relevance dokumentu bez ohledu na dotaz" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+otazky.push({
+    otazka: "[MISSING FW (AI enhanced)] Normalizovaný term i v dokumentu j se ve vektorovém modelu využije typicky k čemu?",
+    odpovedi: {
+        1: "k výpočtu váhy termu (např. složka tf nebo tf-idf) v reprezentaci dokumentu",
+        2: "k přímému určení pořadí dokumentů bez podobnostní funkce", // made up
+        3: "k vytvoření metrické vzdálenosti bez znalosti dotazu", // made up
+        4: "k detekci zájmových bodů v obraze (interest points)" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
