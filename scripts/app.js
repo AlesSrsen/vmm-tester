@@ -89,6 +89,9 @@
                 iter++;
             });
 
+            // Shuffle the answers so they appear in random order
+            fin = shuffleArray(fin);
+
             if (questions.odpoved) {
                 $scope.textAnswer = questions.odpoved;
             }
