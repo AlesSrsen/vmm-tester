@@ -154,25 +154,34 @@
     </nav>
 
     <!-- Stats Section -->
-    <section class="flex flex-wrap items-center gap-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm mb-8">
-        <div class="flex items-center gap-2">
-            <span class="text-slate-600">Chybně:</span>
-            <span class="inline-flex items-center justify-center min-w-[2rem] px-2.5 py-1 bg-red-100 text-red-700 font-semibold rounded-lg">
-                {{ totalErrors }}
-            </span>
+    <section class="flex flex-wrap items-center justify-between gap-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm mb-8">
+        <div class="flex flex-wrap items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-600">Chybně:</span>
+                <span class="inline-flex items-center justify-center min-w-[2rem] px-2.5 py-1 bg-red-100 text-red-700 font-semibold rounded-lg">
+                    {{ totalErrors }}
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-slate-600">Správně:</span>
+                <span class="inline-flex items-center justify-center min-w-[2rem] px-2.5 py-1 bg-green-100 text-green-700 font-semibold rounded-lg">
+                    {{ totalOK }}
+                </span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-slate-600">Zbývá otázek:</span>
+                <span class="inline-flex items-center justify-center min-w-[2rem] px-2.5 py-1 bg-slate-100 text-slate-700 font-semibold rounded-lg">
+                    {{ total }}
+                </span>
+            </div>
         </div>
-        <div class="flex items-center gap-2">
-            <span class="text-slate-600">Správně:</span>
-            <span class="inline-flex items-center justify-center min-w-[2rem] px-2.5 py-1 bg-green-100 text-green-700 font-semibold rounded-lg">
-                {{ totalOK }}
-            </span>
-        </div>
-        <div class="flex items-center gap-2">
-            <span class="text-slate-600">Zbývá otázek:</span>
-            <span class="inline-flex items-center justify-center min-w-[2rem] px-2.5 py-1 bg-slate-100 text-slate-700 font-semibold rounded-lg">
-                {{ total }}
-            </span>
-        </div>
+        <a href="overview.html" 
+           class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-lg transition-colors border border-slate-200">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+            </svg>
+            Přehled otázek
+        </a>
     </section>
 
     <!-- Answer Evaluation Legend -->
