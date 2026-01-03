@@ -657,7 +657,7 @@ otazky.push({
         3: "vždy obsahuje jak uložení (hostování) multimédií, tak vyhledávací funkce", 
         4: "podporuje vyhledávání multimédií pouze na základě textového popisu"
     },
-    spravne: {1: 0, 2: 0, 3: 0, 4: 1}
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
 otazky.push({
