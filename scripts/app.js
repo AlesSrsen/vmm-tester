@@ -79,6 +79,9 @@
                 $scope.note = "";
             }
 
+            // Track if question is AI-generated
+            $scope.isAiGenerated = questions.ai === true;
+
             angular.forEach(questions.odpovedi, function (value, key) {
 
                 fin.push({
@@ -134,7 +137,7 @@
         };
 
         (function () {
-            OTAZKY = shuffleArray(otazky);
+            OTAZKY = shuffleArray(INITIAL_QUESTIONS);
             $scope.setQuestions(OTAZKY.pop());
         })();
 

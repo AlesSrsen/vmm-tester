@@ -1,6 +1,6 @@
-var otazky = [];
+var INITIAL_QUESTIONS = [];
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Co poskytují Stock servery:",
     odpovedi: {
         1: "časové řady vývoje akcií", 
@@ -11,7 +11,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Dotaz (query) je:",
     odpovedi: {
         1: "Navigace ve struktuře databáze (webu)", 
@@ -22,7 +22,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "V kontextu vyhledávání v multimediálních databázích termínem Benchmarking označujeme:",
     odpovedi: {
         1: "platformu vyhodnocování kvality vyhledávacího systému vzhledem k nějaké anotované „golden-standard“ kolekci", 
@@ -33,7 +33,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Přesnost (precision) a úplnost (recall) vyhledávání se reálně chovají tak, že:",
     odpovedi: {
         1: "přesnost lze spočítat z úplnosti", 
@@ -44,7 +44,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Podobnostní vyhledávání (vyhledávání podle podobnosti; similarity search) je:",
     odpovedi: {
         1: "technika klasifikace objektů do tříd pomocí podobnostní matice", 
@@ -55,7 +55,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Funkce podobnosti je:",
     odpovedi: {
         1: "algoritmus, který nalezne pro dotazový deskriptor podobné deskriptory z databáze", 
@@ -66,7 +66,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Nemetrické vzdálenosti, narozdíl od metrických:",
     odpovedi: {
         1: "dovolují modelovat robustnější podobnosti", 
@@ -77,7 +77,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Dynamic time warping distance (DTW) se používá pro měření podobnosti na:",
     odpovedi: {
         1: "vektorech", 
@@ -88,7 +88,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Earth mover&#039;s distance (EMD) je vhodná pro modelování podobnosti na histogramech, když:",
     odpovedi: {
         1: "histogramy reprezentují obraz omezený na barevný prostor RGB", 
@@ -99,7 +99,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "SIFT je",
     odpovedi: {
         1: "detektor a deskriptor lokálních vlastností v obrázcích", 
@@ -110,7 +110,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Matice pro výpočet QFD (quadratic form distance) pro histogramy barev obsahuje",
     odpovedi: {
         1: "vzdálenosti průměru všech barev vyskytujících se v obrázcích", 
@@ -121,7 +121,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Termín „query-by-humming“ při vyhledávání např. hudební skladby znamená:",
     odpovedi: {
         1: "že jako dotaz je použito audio zapískané/zazpívané uživatelem", 
@@ -132,7 +132,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "M-strom je:",
     odpovedi: {
         1: "inspirován R-stromem, využívá hiearchické hnízdění metrických regionů a není vyvážený", 
@@ -143,7 +143,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "T-chyba (T-error) vyžaduje:",
     odpovedi: {
         1: "proporce trojic v datové sadě splňujících trojúhelníkovou nerovnost", 
@@ -154,7 +154,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Metrické přístupové metody (metric access methods) jsou:",
     odpovedi: {
         1: "datové struktury a algoritmy umožňující rychlé vyhledávání v metrickém modelu podobnostního vyhledávání", 
@@ -165,7 +165,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Mezi metrické přístupové metody (metric access methods) nepatří:",
     odpovedi: {
         1: "D-index", 
@@ -176,7 +176,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Nevýhoda měření výkonu metrického indexu reálným časem je",
     odpovedi: {
         1: "závislost na platformě, optimalizaci, operačním systému a hardware", 
@@ -187,7 +187,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "AESA je",
     odpovedi: {
         1: "binární strom využívající dělení prostoru (zobecněnými) nadrovinami", 
@@ -198,7 +198,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Mezi axiomy metriky (metric postulates) nepatří:",
     odpovedi: {
         1: "symetrie (symmetry)", 
@@ -209,7 +209,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Globální pivoti jsou:",
     odpovedi: {
         1: "tvořeny za účelem vytváření indexu", 
@@ -220,7 +220,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Úplnost vyhledávání (retrieval recall) označuje:",
     odpovedi: {
         1: "pravděpodobnost, že objekt ve výsledku dotazu je relevantní", 
@@ -231,7 +231,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Co je virtuální/implicitní graf v kontextu brouzdání (browsing) v multimédiích?",
     odpovedi: {
         1: "nejkratší cesta v grafu, kde uzly jsou multimédia a hrany podobnosti mezi nimi", 
@@ -242,7 +242,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Booleovský model vyhledávání je založen na:",
     odpovedi: {
         1: "uspořádání dokumentů podle podobnosti k dotazu", 
@@ -253,7 +253,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Co je explicitní graf v kontextu brouzdání (browsing) v multimédiích?",
     odpovedi: {
         1: "hiearchie multimediálních kategorií, modelovaná explicitně", 
@@ -264,7 +264,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Výpočet Earth mover&#039;s distance (EMD) má časovou složitost:",
     odpovedi: {
         1: "O(2^n)", 
@@ -275,7 +275,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Vektorový model vyhledávání je založen na:",
     odpovedi: {
         1: "binárních vektorech a Hammingově vzdálenosti", 
@@ -286,7 +286,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Vektorový model vyhledávání je založen na:",
     odpovedi: {
         1: "fuzzy logice a teorii fuzzy množin", 
@@ -297,7 +297,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Mezi nevýhody LSI nepatří",
     odpovedi: {
         1: "drahé zpracování matice", 
@@ -308,7 +308,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Zrychlení v LSI modelu lze zajistit",
     odpovedi: {
         1: "invertovaným indexem a využitím pouze několika důležitých konceptů", 
@@ -319,7 +319,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Editační vzdálenost (edit distance) slouží k měření podobností:",
     odpovedi: {
         1: "vektorů, kde měří nejmenší tzv. „vektorový edit“", 
@@ -330,7 +330,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Pro vektorový model dotazování neplatí, že:",
     odpovedi: {
         1: "obsahuje logické spojky", 
@@ -341,7 +341,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Vážení podle tf-idf schématu:",
     odpovedi: {
         1: "je populární technika konstrukce vah termů ve vektorovém modelu", 
@@ -352,7 +352,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Noty u podobnostního skóre monofóní melodie (monophonie melody) jsou modelovány:",
     odpovedi: {
         1: "svojí výškou", 
@@ -363,7 +363,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Podobnostní přístup pro symbolicky reprezentované polyfonní melodie je aplikovatelný na:",
     odpovedi: {
         1: "pouze MIDI soubory", 
@@ -374,7 +374,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Standard MPEG7 popisuje:",
     odpovedi: {
         1: "definice deskriptorů a nástroje k jejich extrakci", 
@@ -385,7 +385,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "TV-modifikátor (TV-modifier) je:",
     odpovedi: {
         1: "striktně konkávní SP modifikátor, což zajišťuje vyšší hodnotu T-chyby (T-error)", 
@@ -396,7 +396,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Termín Retrieval Efficiency znamená",
     odpovedi: {
         1: "efektivita vyhledávače ve smyslu rychlosti vyhledávání", 
@@ -407,7 +407,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Vysoká vnitřní dimenze (intrinsic dimensionality) značí že:",
     odpovedi: {
         1: "data netvoří shluky (clustery) a tedy jsou špatně strukturovaná", 
@@ -418,7 +418,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Lower-bounding je:",
     odpovedi: {
         1: "odvození výpočetně levné metriky z výpočetně drahé nemetriky", 
@@ -429,7 +429,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Podobnost zachovávající modifikátor (similarity preserving modifier) je:",
     odpovedi: {
         1: "rostoucí funkce f pro kterou f(0) = 0", 
@@ -440,7 +440,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Uživatelská zpětná vazba (user relevance feedback) ve vyhledávačích znamená:",
     odpovedi: {
         1: "odeslání webového formuláře s popisem chyby", 
@@ -451,7 +451,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Termínem False dismissal (false drop) označujeme:",
     odpovedi: {
         1: "objekt, který se měl dostat do výsledku, ale není vůbec v databázi", 
@@ -462,7 +462,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Invertovaný index:",
     odpovedi: {
         1: "má řidší matici než index neinvertovaný", 
@@ -473,7 +473,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Kvadratická forma (quadratic form distance, QFD) je vhotná pro modelování podobnosti na vektorech když:",
     odpovedi: {
         1: "počet dimenzí vektoru odpovídá druhé mocnině celého čísla", 
@@ -484,7 +484,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Longest common subsequence (LCS) je výhodná , protože:",
     odpovedi: {
         1: "je výpočetně levnější než L<sub>p</sub>", 
@@ -495,7 +495,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Výpočet L<sub>p</sub> vzdálenosti má časovou složitost:",
     odpovedi: {
         1: "O(pn<sup>2</sup>)", 
@@ -506,7 +506,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "L<sub>p</sub> (Minkowského vzdálenosti):",
     odpovedi: {
         1: "je třída vektorových vzdáleností, které uvažují nezávislé dimenze", 
@@ -517,7 +517,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Dynamic time warping (DTW) je výhodná, protože:",
     odpovedi: {
         1: "není metrická narozdíl od L<sub>p</sub>", 
@@ -528,7 +528,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Mezi typické vhodné vlastnosti pro popis obrázku nepatří:",
     odpovedi: {
         1: "invariance vůči zvětšení/zmenšení (scale)", 
@@ -539,7 +539,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "SURF je:",
     odpovedi: {
         1: "technika seqmentace obrazu na homogenní textury", 
@@ -550,7 +550,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Extrakce vlastností (feature extraction) je:",
     odpovedi: {
         1: "model a procedura tvorby zjednodušené reprezentace multimediálního objektu, použíté pro vyhledávání", 
@@ -561,7 +561,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "PM-tree obohacuje M-tree o:",
     odpovedi: {
         1: "globální pivoty, čímž zvětšuje regiony a tedy zlepšuje filtrování", 
@@ -572,7 +572,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Vnitřní dimenze (intrinsic dimensionality) je:",
     odpovedi: {
         1: "typ fraktální dimenze na metrickém prostoru", 
@@ -583,7 +583,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Základní jednotkou nákladů v rámci metrického indexování je:",
     odpovedi: {
         1: "přístup na disk", 
@@ -594,7 +594,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "TG-modifikátor (TG-modifier) je:",
     odpovedi: {
         1: "striktně konvexní SP modifikátor, což zajišťuje vyšší hodnotu T-chyby (T-error)", 
@@ -605,7 +605,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Výhody Booleovského modelu:",
     odpovedi: {
         1: "jednoduchost, rozšiřitelnost a efektivní implementace", 
@@ -616,7 +616,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Nevýhody Booleovského modelu jsou:",
     odpovedi: {
         1: "Složitost modelu a neefektivní implementace", 
@@ -627,7 +627,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Mezi nevýhody Booleovského modelu dotazování nepatří:",
     odpovedi: {
         1: "omezená vyjadřovací schopnost", 
@@ -638,7 +638,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Term je:",
     odpovedi: {
         1: "Ukončovací znak dokumentu (CR LF)", 
@@ -649,7 +649,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Server pro ukládání a sdílení multimédií (hosting server):",
     odpovedi: {
         1: "podporuje vyhledávání multimédií na základě obsahu nebo textového popisu", 
@@ -660,7 +660,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Invertovaný index je u boolevského modelu dotazování obzvláště efektivní pro:",
     odpovedi: {
         1: "sady obsahující málo dokumentů", 
@@ -671,7 +671,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Podobnostní operátor narozdíl od dotazu",
     odpovedi: {
         1: "je často parametrizovaný a vrací velikou odpověď", 
@@ -682,7 +682,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Dotaz na k nejbližších sousedů (k nearest neighbors query, kNN):",
     odpovedi: {
         1: "vybere předem neurčený počet objektů do vzdálenosti k", 
@@ -693,7 +693,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "kNN dotaz (range query)",
     odpovedi: {
         1: "je vhodný pro dotazování nad objekty u kterých uživatel zná sémantiku extrahovaných vektorů a sémantiku podobnostní funkce", 
@@ -704,7 +704,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Content-based retrieval označuje:",
     odpovedi: {
         1: "vyhledávání struktury v obsahu multimédia", 
@@ -715,7 +715,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Výpočet Hausdorff distance má časovou složitost:",
     odpovedi: {
         1: "O(nlogn)", 
@@ -726,7 +726,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Hausdorff distance je:",
     odpovedi: {
         1: "obecná množinová vzdálenost, kde pro podobnost elementů množin se využívá tzv. ground distance", 
@@ -737,7 +737,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Výpočet kvadratické formy (quadratic form distance, QDF) má časovou složitost:",
     odpovedi: {
         1: "O(n<sup>2</sup>)", 
@@ -748,7 +748,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Keyframe je:",
     odpovedi: {
         1: "základní prvek pro konstrukci video deskriptoru", 
@@ -759,7 +759,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "MPEG7 audio definuje:",
     odpovedi: {
         1: "pouze nízkoúrovňové (low-level) diskriptory", 
@@ -770,7 +770,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Zájmový bod (interest point) je:",
     odpovedi: {
         1: "bod/region v obraze, který je dobře definovaný, nese informaci o svém okolí a je stabilní", 
@@ -781,7 +781,7 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Metrický model podobnostního vyhledávání je:",
     odpovedi: {
         1: "obecný model indexování čehokoliv na internetu, co lze vyhledat podle podobnosti", 
@@ -792,7 +792,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Termín Retrieval efficiency znamená:",
     odpovedi: {
         1: "Míru úspornosti reprezentace dotazu", 
@@ -803,7 +803,7 @@ otazky.push({
     spravne: {1: 0, 2: 1, 3: 0, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "PAC jsou:",
     odpovedi: {
         1: "pravděpodobně podobnostní dotazy",
@@ -814,7 +814,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Metoda FastMap",
     odpovedi: {
         1: "nepoužívá kosinovu a Pythagorovu větu",
@@ -825,7 +825,7 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
+INITIAL_QUESTIONS.push({
     otazka: "Aproximativní vyhledávání je výhodné, když",
     odpovedi: {
         1: "neznáme přesnou sémantiku vzdálenostní funkce",
@@ -839,8 +839,9 @@ otazky.push({
 // === Missing / extra questions from the new HTML notes ===
 // (Wrong answers marked as "made up" are plausible distractors, but not guaranteed to be real exam options.)
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Termín Retrieval Effectiveness znamená:",
+INITIAL_QUESTIONS.push({
+    otazka: "Termín Retrieval Effectiveness znamená:",
+    ai: true,
     odpovedi: {
         1: "efektivita vyhledávače ve smyslu kvality výsledku vyhledávání",
         2: "efektivita vyhledávače ve smyslu rychlosti vyhledávání", // made up (this is retrieval efficiency)
@@ -850,8 +851,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Na co se používá „text-based retrieval“?",
+INITIAL_QUESTIONS.push({
+    otazka: "Na co se používá „text-based retrieval“?",
+    ai: true,
     odpovedi: {
         1: "vyhledávání multimédií pouze podle textové anotace (metadat) a textových signálů",
         2: "vyhledávání multimédií přímo podle vizuálního/akustického obsahu bez anotace", // made up (content-based)
@@ -861,8 +863,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co je filtrace (filtering) ve vyhledávání?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co je filtrace (filtering) ve vyhledávání?",
+    ai: true,
     odpovedi: {
         1: "formulace fixního (stálého) vyhledávacího záměru nad dynamickým obsahem (např. proud dokumentů)",
         2: "explicitní formulace jednorázového (one-shot) vyhledávacího záměru", // made up (to je dotaz/query)
@@ -872,8 +875,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co je to vyhledávání filtrováním?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co je to vyhledávání filtrováním?",
+    ai: true,
     odpovedi: {
         1: "dlouhodobé (standing) dotazování nad průběžně přicházejícími daty / dynamickou databází",
         2: "to samé co jednorázové dotazování (ad-hoc query)", // made up
@@ -883,8 +887,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Anotace multimédia znamená:",
+INITIAL_QUESTIONS.push({
+    otazka: "Anotace multimédia znamená:",
+    ai: true,
     odpovedi: {
         1: "slovní/textový popis (metadata) multimediálního objektu",
         2: "komprimovanou binární reprezentaci multimédia (např. JPEG bitstream)", // made up
@@ -894,8 +899,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Jak typicky vyhledává webový vyhledávač multimédia?",
+INITIAL_QUESTIONS.push({
+    otazka: "Jak typicky vyhledává webový vyhledávač multimédia?",
+    ai: true,
     odpovedi: {
         1: "kombinací textových signálů (okolní text, user annotation, anchor text, název souboru) a případně i obsahových metod",
         2: "výhradně content-based retrieval bez jakékoliv textové informace", // made up
@@ -905,8 +911,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co je False hit (false alarm)?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co je False hit (false alarm)?",
+    ai: true,
     odpovedi: {
         1: "objekt je ve výsledku testovacího systému, ale není ve výsledku referenčního (ground-truth) systému",
         2: "objekt je v databázi, ale není vůbec indexovatelný", // made up
@@ -916,8 +923,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co je False drop (false dismissal)?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co je False drop (false dismissal)?",
+    ai: true,
     odpovedi: {
         1: "objekt není ve výsledku testovacího systému, ale ve výsledku referenčního (ground-truth) systému je",
         2: "objekt je ve výsledku testovacího systému, ale není relevantní", // made up (to je false hit / false positive)
@@ -927,8 +935,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Top-K – kolik výsledků zobrazí?",
+INITIAL_QUESTIONS.push({
+    otazka: "Top-K – kolik výsledků zobrazí?",
+    ai: true,
     odpovedi: {
         1: "zobrazí právě K nejlépe ohodnocených (nejpodobnějších) výsledků",
         2: "zobrazí všechny výsledky do vzdálenosti K", // made up (to je range query s prahem)
@@ -938,8 +947,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] U kterých textových modelů vyhledávání se typicky používá invertovaný index?",
+INITIAL_QUESTIONS.push({
+    otazka: "U kterých textových modelů vyhledávání se typicky používá invertovaný index?",
+    ai: true,
     odpovedi: {
         1: "pouze booleovský model", // made up
         2: "pouze vektorový model", // made up
@@ -949,8 +959,9 @@ otazky.push({
     spravne: {1: 0, 2: 0, 3: 1, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Query-by-example znamená:",
+INITIAL_QUESTIONS.push({
+    otazka: "Query-by-example znamená:",
+    ai: true,
     odpovedi: {
         1: "dotaz je tvořen přímo ukázkovým dokumentem/objektem (příklad), podle kterého se hledají podobné",
         2: "dotaz je tvořen pouze booleovským výrazem AND/OR/NOT", // made up
@@ -960,8 +971,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co je to kodek?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co je to kodek?",
+    ai: true,
     odpovedi: {
         1: "složenina „kodér + dekodér“ (coder/decoder)",
         2: "pouze kompresní algoritmus bez dekódování", // made up
@@ -971,8 +983,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co je to MIME?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co je to MIME?",
+    ai: true,
     odpovedi: {
         1: "Multipurpose Internet Mail Extensions; standard pro označování internet media types (např. Content-Type)",
         2: "kompresní standard pro obrázky (náhrada JPEG)", // made up
@@ -982,8 +995,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co je to range query?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co je to range query?",
+    ai: true,
     odpovedi: {
         1: "vrací předem neurčený počet objektů do zadaného prahu vzdálenosti (radius) od dotazu",
         2: "vrací přesně K nejbližších sousedů", // made up (to je kNN)
@@ -993,8 +1007,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co jsou lokální pivoti?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co jsou lokální pivoti?",
+    ai: true,
     odpovedi: {
         1: "dynamické objekty volené během indexace (typicky pro konkrétní část indexu) pro konstrukci lower boundů",
         2: "statické objekty platné po celý život indexu (globální pivoti)", // made up
@@ -1004,8 +1019,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co je browsing v kontextu multimediálního vyhledávání?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co je browsing v kontextu multimediálního vyhledávání?",
+    ai: true,
     odpovedi: {
         1: "iterativní průzkum prostoru pomocí série dotazů / navigace nad výsledky (typicky similarity-based)",
         2: "jednorázový booleovský dotaz nad invertovaným indexem", // made up
@@ -1015,8 +1031,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] TG vs TV (modifikátory) – jaký je rozdíl z hlediska tvaru a T-chyby?",
+INITIAL_QUESTIONS.push({
+    otazka: "TG vs TV (modifikátory) – jaký je rozdíl z hlediska tvaru a T-chyby?",
+    ai: true,
     odpovedi: {
         1: "TG je striktně konkávní SP modifikátor (nižší T-error), TV je striktně konvexní SP modifikátor (vyšší T-error)",
         2: "TG je striktně konvexní a vždy snižuje T-error více než TV", // made up
@@ -1026,8 +1043,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co znamená tf (term frequency) v tf-idf?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co znamená tf (term frequency) v tf-idf?",
+    ai: true,
     odpovedi: {
         1: "četnost výskytu termu v konkrétním dokumentu (případně její normalizace)",
         2: "počet dokumentů v kolekci", // made up
@@ -1037,8 +1055,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Co znamená idf (inverse document frequency) v tf-idf?",
+INITIAL_QUESTIONS.push({
+    otazka: "Co znamená idf (inverse document frequency) v tf-idf?",
+    ai: true,
     odpovedi: {
         1: "míra vzácnosti termu v kolekci; typicky roste, když termu klesá document frequency (df)",
         2: "četnost výskytu termu v konkrétním dokumentu", // made up
@@ -1048,8 +1067,9 @@ otazky.push({
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
 });
 
-otazky.push({
-    otazka: "[MISSING FW (AI enhanced)] Normalizovaný term i v dokumentu j se ve vektorovém modelu využije typicky k čemu?",
+INITIAL_QUESTIONS.push({
+    otazka: "Normalizovaný term i v dokumentu j se ve vektorovém modelu využije typicky k čemu?",
+    ai: true,
     odpovedi: {
         1: "k výpočtu váhy termu (např. složka tf nebo tf-idf) v reprezentaci dokumentu",
         2: "k přímému určení pořadí dokumentů bez podobnostní funkce", // made up
