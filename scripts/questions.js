@@ -836,7 +836,7 @@ INITIAL_QUESTIONS.push({
     spravne: {1: 0, 2: 0, 3: 0, 4: 1}
 });
 
-// === Missing / extra questions from the new HTML notes ===
+// === Missing / extra questions from the new HTML notes https://fit-wiki.cz/%C5%A1kola/p%C5%99edm%C4%9Bty/mi-vmw/vmw_zkouska_vsechny_zname_otazky ===
 // (Wrong answers marked as "made up" are plausible distractors, but not guaranteed to be real exam options.)
 
 INITIAL_QUESTIONS.push({
@@ -852,6 +852,26 @@ INITIAL_QUESTIONS.push({
 });
 
 INITIAL_QUESTIONS.push({
+    otazka: "Hausdorff distance:",
+    odpovedi: {
+        1: "měří „nejvzdálenějšího nejbližšího souseda“, pro všechny prvky A se spočítají vzdálenosti k nejbližšímu sousedu v B a vezme se maximum, multi-reprezentace (sada objektů příslušející jednomu dokumentu), expensive O(mn)*O(ground dist.)",
+        2: "Nebyli moznosti na FW",
+    },
+    spravne: {1: 1, 2: 0}
+});
+
+INITIAL_QUESTIONS.push({
+    otazka: "Složitost QFD, pre D dimenzionálny deskriptor:",
+    odpovedi: {
+        1: "O(D^2)",
+        2: "O(DlogD)", // made up
+        3: "O(D)", // made up
+        4: "O(D^3)" // made up
+    },
+    spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+INITIAL_QUESTIONS.push({
     otazka: "Na co se používá „text-based retrieval“?",
     ai: true,
     odpovedi: {
@@ -861,6 +881,30 @@ INITIAL_QUESTIONS.push({
         4: "vyhledávání pouze podle komprese/kodeku (např. MPEG)" // made up
     },
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Na co se používá „content-based retrieval“?",
+  ai: true,
+  odpovedi: {
+    1: "K vyhledávání multimédií podle skutečného obsahu (vizuálního/akustického) pomocí deskriptorů a modelů, nezávisle na textové anotaci.",
+    2: "K vyhledávání multimédií výhradně podle textové anotace (metadat) bez použití obsahu.",
+    3: "K vyhledávání pouze podle komprese a kodeku (např. JPEG/MPEG) bez analýzy obsahu.",
+    4: "K vyhledávání pouze booleovským dotazem nad invertovaným indexem."
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 }
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Co je to dotaz (query) ve vyhledávání?",
+  ai: true,
+  odpovedi: {
+    1: "Explicitní formulace jednorázového (one-shot) záměru vyhledávání.",
+    2: "Formulace fixního (stálého) záměru nad dynamickým obsahem (subscription/filtering).",
+    3: "Proces komprese indexu za účelem rychlejšího vyhledávání.",
+    4: "Metoda hodnocení kvality vyhledávání pomocí precision/recall."
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 }
 });
 
 INITIAL_QUESTIONS.push({
@@ -1077,4 +1121,52 @@ INITIAL_QUESTIONS.push({
         4: "k detekci zájmových bodů v obraze (interest points)" // made up
     },
     spravne: {1: 1, 2: 0, 3: 0, 4: 0}
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Co je vnitřní dimenze (intrinsic dimensionality) a co vyjadřuje?",
+  ai: true,
+  odpovedi: {
+    1: "Kvantitativní ukazatel, který měří, jak „dobře“ je daná distribuce rozložená; typicky se udává jako μ² / (2σ²) a vyšší hodnota znamená horší (méně příznivou) distribuci pro vyhledávání/indexaci.",
+    2: "Počet atributů (souřadnic) v původním vektorovém prostoru dat; vyšší hodnota vždy znamená lepší distribuci.",
+    3: "Míra přesnosti vyhledávání (precision) vypočtená jako μ / σ, kde vyšší hodnota znamená lepší výsledky.",
+    4: "Velikost invertovaného indexu vyjádřená jako poměr počtu termů a dokumentů; vyšší hodnota znamená rychlejší dotazy."
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 }
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Co vyjadřuje vzdálenost DTW (Dynamic Time Warping) a k čemu slouží?",
+  ai: true,
+  odpovedi: {
+    1: "Zohledňuje časově lokální změny „frekvence vzorkování“ tím, že lokálně natahuje/zkracuje posloupnosti a hledá zarovnání s nejmenší celkovou cenou (součtem parciálních vzdáleností).",
+    2: "Je to prostý Eukleidovský rozdíl dvou posloupností po prvcích bez jakéhokoli časového zarovnání; nepovoluje posuny ani deformace v čase.",
+    3: "Měří podobnost pouze podle globálního průměru a rozptylu signálu; ignoruje pořadí prvků v čase.",
+    4: "Je to metrický indexační mechanismus, který nahrazuje invertovaný index pro textové dotazy."
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 }
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Co je invertovaný index (inverted index)?",
+  ai: true,
+  odpovedi: {
+    1: "Struktura, která pro každý term ukládá seznam ID dokumentů (postings list), ve kterých se term vyskytuje; při vyhledávání se procházejí jen seznamy termů z dotazu.",
+    2: "Seznam všech termů pro každý dokument; při vyhledávání se vždy prochází celý seznam termů všech dokumentů.",
+    3: "Metrický index pro kNN dotazy, který ukládá vzdálenosti dokumentů od pivotů.",
+    4: "Datová struktura, která ukládá pouze pořadí Top-K výsledků bez možnosti vyhodnocení dotazu."
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 }
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Co vyjadřuje Hausdorffova vzdálenost (Hausdorff distance) mezi dvěma množinami objektů A a B?",
+  ai: true,
+  odpovedi: {
+    1: "Měří „nejvzdálenějšího nejbližšího souseda“: pro každý prvek z A se vezme vzdálenost k jeho nejbližšímu prvku v B a výsledkem je maximum z těchto vzdáleností (analogicky lze uvažovat i opačný směr).",
+    2: "Je to průměrná vzdálenost všech dvojic prvků mezi A a B; čím větší průměr, tím menší vzdálenost.",
+    3: "Je to vzdálenost definovaná pouze pro jednorozměrné posloupnosti, která lokálně natahuje/zkracuje čas (DTW).",
+    4: "Je to textová míra podobnosti založená na tf-idf váhách a kosinové podobnosti."
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 }
 });
