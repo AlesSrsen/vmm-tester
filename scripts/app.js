@@ -89,6 +89,12 @@
           $scope.note = "";
         }
 
+        if (questions.explanation) {
+          $scope.explanation = questions.explanation;
+        } else {
+          $scope.explanation = "";
+        }
+
         // Track if question is AI-generated
         $scope.isAiGenerated = questions.ai === true;
 
@@ -159,6 +165,7 @@
       $scope.next = function () {
         $scope.questionText = "";
         $scope.note = "";
+        $scope.explanation = "";
 
         $scope.ss = false;
         $scope.selection = [];
