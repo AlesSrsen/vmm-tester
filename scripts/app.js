@@ -1,193 +1,195 @@
 (function (angular) {
-    "use strict";
+  "use strict";
 
+  var paaApp = angular.module("paaApp", []);
 
-    var paaApp = angular.module('paaApp', []);
-
-    function shuffleArray(array) {
-        for (var i = array.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
-        return array;
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
     }
+    return array;
+  }
 
-    paaApp.directive("mathjaxBind", function () {
-        return {
-            restrict: "A",
-            scope: {
-                text: "@mathjaxBind"
-            },
-            controller: ["$scope", "$element", "$attrs", function ($scope, $element, $attrs) {
-                $scope.$watch('text', function (value) {
-                    var $script = angular.element("<script type='math/tex'>")
-                        .html(value == undefined ? "" : value);
-                    $element.html("");
-                    $element.append($script);
-                    MathJax.Hub.Queue(["Reprocess", MathJax.Hub, $element[0]]);
-                });
-            }]
-        };
-    });
+  paaApp.directive("mathjaxBind", function () {
+    return {
+      restrict: "A",
+      scope: {
+        text: "@mathjaxBind",
+      },
+      controller: [
+        "$scope",
+        "$element",
+        "$attrs",
+        function ($scope, $element, $attrs) {
+          $scope.$watch("text", function (value) {
+            var $script = angular
+              .element("<script type='math/tex'>")
+              .html(value == undefined ? "" : value);
+            $element.html("");
+            $element.append($script);
+            MathJax.Hub.Queue(["Reprocess", MathJax.Hub, $element[0]]);
+          });
+        },
+      ],
+    };
+  });
 
-    paaApp.directive('dynamic', function ($compile) {
-        return {
-            restrict: 'A',
-            replace: true,
-            link: function (scope, ele, attrs) {
-                scope.$watch(attrs.dynamic, function (html) {
-                    html = html.replace(/\$\$([^$]+)\$\$/g, "<span class=\"blue\" mathjax-bind=\"$1\"></span>");
-                    html = html.replace(/\$([^$]+)\$/g, "<span class=\"red\" mathjax-bind=\"$1\"></span>");
-                    ele.html(html);
-                    $compile(ele.contents())(scope);
-                });
-            }
-        };
-    });
+  paaApp.directive("dynamic", function ($compile) {
+    return {
+      restrict: "A",
+      replace: true,
+      link: function (scope, ele, attrs) {
+        scope.$watch(attrs.dynamic, function (html) {
+          html = html.replace(
+            /\$\$([^$]+)\$\$/g,
+            '<span class="blue" mathjax-bind="$1"></span>'
+          );
+          html = html.replace(
+            /\$([^$]+)\$/g,
+            '<span class="red" mathjax-bind="$1"></span>'
+          );
+          ele.html(html);
+          $compile(ele.contents())(scope);
+        });
+      },
+    };
+  });
 
-    paaApp.controller('NewsController', ['$scope', function ($scope) {
+  paaApp.controller("NewsController", [
+    "$scope",
+    function ($scope) {
+      $scope.selection = [];
+      $scope.userText = "";
+      $scope.totalErrors = 0;
+      $scope.totalOK = 0;
+      var tmpQQ;
 
-        $scope.selection = [];
+      var OTAZKY;
+
+      $scope.reset = function () {
         $scope.userText = "";
-        $scope.totalErrors = 0;
-        $scope.totalOK = 0;
-        var tmpQQ;
+      };
 
-        var OTAZKY;
+      $scope.setQuestions = function (questions) {
+        tmpQQ = questions;
 
-        $scope.reset = function () {
-            $scope.userText = "";
-        };
+        var fin = [];
+        var iter = 1;
+        $scope.question = [];
+        $scope.textAnswer = "";
 
-        $scope.setQuestions = function (questions) {
+        $scope.questionText = questions.otazka;
 
-            tmpQQ = questions;
+        if (questions.note) {
+          $scope.note = questions.note;
+        } else {
+          $scope.note = "";
+        }
 
-            var fin = [];
-            var iter = 1;
-            $scope.question = [];
-            $scope.textAnswer = "";
+        // Track if question is AI-generated
+        $scope.isAiGenerated = questions.ai === true;
 
-            $scope.questionText = questions.otazka;
+        angular.forEach(questions.odpovedi, function (value, key) {
+          fin.push({
+            text: value,
+            isCorrect: questions.spravne[iter] === 1,
+          });
 
-            if(questions.note) {
-                $scope.note = questions.note;
-            } else {
-                $scope.note = "";
-            }
+          iter++;
+        });
 
-            // Track if question is AI-generated
-            $scope.isAiGenerated = questions.ai === true;
+        // Shuffle the answers so they appear in random order
+        fin = shuffleArray(fin);
 
-            angular.forEach(questions.odpovedi, function (value, key) {
+        if (questions.odpoved) {
+          $scope.textAnswer = questions.odpoved;
+        }
 
-                fin.push({
-                    text: value,
-                    isCorrect: questions.spravne[iter] === 1
-                });
+        $scope.question = fin;
+        $scope.total = OTAZKY.length;
+      };
 
-                iter++;
-            });
+      $scope.solve = function (questions) {
+        if ($scope.textAnswer) {
+          $scope.ss = true;
+          return;
+        }
 
-            // Shuffle the answers so they appear in random order
-            fin = shuffleArray(fin);
+        var f = false;
 
-            if (questions.odpoved) {
-                $scope.textAnswer = questions.odpoved;
-            }
+        angular.forEach($scope.question, function (oo) {
+          if ($scope.isCorrect(oo) === false) {
+            f = true;
+          }
+        });
 
-            $scope.question = fin;
-            $scope.total = OTAZKY.length;
-        };
+        if (f === true) {
+          $scope.totalErrors++;
 
+          OTAZKY.push(tmpQQ);
+          OTAZKY = shuffleArray(OTAZKY);
+        } else {
+          $scope.totalOK++;
+        }
 
-        $scope.solve = function (questions) {
+        $scope.ss = true;
+      };
 
-            if ($scope.textAnswer) {
-                $scope.ss = true;
-                return;
-            }
+      (function () {
+        OTAZKY = shuffleArray(INITIAL_QUESTIONS);
+        $scope.setQuestions(OTAZKY.pop());
+      })();
 
-            var f = false;
+      $scope.nextOK = function () {
+        $scope.totalOK++;
+        $scope.next();
+      };
 
-            angular.forEach($scope.question, function (oo) {
+      $scope.nextWrong = function () {
+        OTAZKY.push(tmpQQ);
+        OTAZKY = shuffleArray(OTAZKY);
 
-                if ($scope.isCorrect(oo) === false) {
-                    f = true;
-                }
+        $scope.totalErrors++;
+        $scope.next();
+      };
 
-            });
+      $scope.next = function () {
+        $scope.questionText = "";
+        $scope.note = "";
 
-            if (f === true) {
-                $scope.totalErrors++;
+        $scope.ss = false;
+        $scope.selection = [];
+        $scope.setQuestions(OTAZKY.pop());
+        $scope.reset();
+      };
 
-                OTAZKY.push(tmpQQ);
-                OTAZKY = shuffleArray(OTAZKY);
-            } else {
-                $scope.totalOK++;
-            }
+      $scope.isCorrect = function (que) {
+        var isSelected = $scope.selection.indexOf(que) > -1;
+        var shouldBechecked = que.isCorrect;
 
-            $scope.ss = true;
+        if (isSelected == shouldBechecked) {
+          return true;
+        } else {
+          return false;
+        }
+      };
 
-        };
+      // Toggle selection for a given answer
+      $scope.toggleSelection = function toggleSelection(answer) {
+        var idx = $scope.selection.indexOf(answer);
 
-        (function () {
-            OTAZKY = shuffleArray(INITIAL_QUESTIONS);
-            $scope.setQuestions(OTAZKY.pop());
-        })();
-
-
-        $scope.nextOK = function () {
-            $scope.totalOK++;
-            $scope.next();
-        };
-
-        $scope.nextWrong = function () {
-            OTAZKY.push(tmpQQ);
-            OTAZKY = shuffleArray(OTAZKY);
-
-            $scope.totalErrors++;
-            $scope.next();
-        };
-
-
-        $scope.next = function () {
-            $scope.questionText = "";
-            $scope.note = "";
-
-            $scope.ss = false;
-            $scope.selection = [];
-            $scope.setQuestions(OTAZKY.pop());
-            $scope.reset();
-        };
-
-        $scope.isCorrect = function (que) {
-            var isSelected = $scope.selection.indexOf(que) > -1;
-            var shouldBechecked = que.isCorrect;
-
-            if (isSelected == shouldBechecked) {
-                return true;
-            } else {
-                return false;
-            }
-        };
-
-
-        // Toggle selection for a given answer
-        $scope.toggleSelection = function toggleSelection(answer) {
-            var idx = $scope.selection.indexOf(answer);
-
-            if (idx > -1) {
-                // Currently selected - remove it
-                $scope.selection.splice(idx, 1);
-            } else {
-                // Newly selected - add it
-                $scope.selection.push(answer);
-            }
-        };
-
-    }]);
-
+        if (idx > -1) {
+          // Currently selected - remove it
+          $scope.selection.splice(idx, 1);
+        } else {
+          // Newly selected - add it
+          $scope.selection.push(answer);
+        }
+      };
+    },
+  ]);
 })(angular);
+

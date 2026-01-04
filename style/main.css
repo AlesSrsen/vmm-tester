@@ -2,27 +2,27 @@
 
 /* Smooth transitions for interactive elements */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Custom checkbox styling for better visual appearance */
 input[type="checkbox"] {
-    cursor: pointer;
-    accent-color: #3b82f6;
+  cursor: pointer;
+  accent-color: #3b82f6;
 }
 
 input[type="checkbox"]:disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 /* MathJax content styling */
 .MathJax {
-    font-size: 1.1em !important;
+  font-size: 1.1em !important;
 }
 
 /* Ensure proper text wrapping in answer options */
 label {
-    word-break: break-word;
+  word-break: break-word;
 }
 
 /* Focus states for accessibility */
@@ -30,44 +30,52 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-    outline: 2px solid #3b82f6;
-    outline-offset: 2px;
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
 }
 
 /* Animation for answer feedback */
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 .border-red-400 {
-    animation: shake 0.3s ease-in-out;
+  animation: shake 0.3s ease-in-out;
 }
 
 /* Smooth page load animation */
 main {
-    animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.3s ease-out;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Print styles */
 @media print {
-    body {
-        background: white !important;
-    }
-    
-    button, nav[role="group"] {
-        display: none !important;
-    }
+  body {
+    background: white !important;
+  }
+
+  button,
+  nav[role="group"] {
+    display: none !important;
+  }
 }
