@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
   <head>
     <meta charset="utf-8" />
@@ -311,6 +311,33 @@
         </a>
       </section>
 
+      <!-- New label for keyboard shortcuts -->
+      <div class="lg:flex items-center gap-2 mb-3 text-sm text-slate-500">
+        <span>
+          Klávesy
+          <kbd
+            class="px-1.5 py-0.5 bg-slate-50 border border-slate-300 rounded text-xs font-sans font-semibold"
+            >1</kbd
+          >
+          -
+          <kbd
+            class="px-1.5 py-0.5 bg-slate-50 border border-slate-300 rounded text-xs font-sans font-semibold"
+            >4</kbd
+          >
+          vyberou odpověď,
+          <kbd
+            class="px-1.5 py-0.5 bg-slate-50 border border-slate-300 rounded text-xs font-sans font-semibold"
+            >Space</kbd
+          >
+          nebo
+          <kbd
+            class="px-1.5 py-0.5 bg-slate-50 border border-slate-300 rounded text-xs font-sans font-semibold"
+            >Enter</kbd
+          >
+          ji potvrdí.
+        </span>
+      </div>
+
       <!-- Answer Evaluation Legend -->
       <aside
         ng-if="ss && !textAnswer"
@@ -349,7 +376,10 @@
         >
           <a
             href="#"
-            onclick="event.preventDefault(); location.reload(true);"
+            onclick="
+              event.preventDefault();
+              location.reload(true);
+            "
             class="hover:text-blue-600 transition-colors"
             >Reset testeru</a
           >
