@@ -379,7 +379,7 @@ INITIAL_QUESTIONS.push({
     1: "invertovaným indexem a využitím pouze několika důležitých konceptů",
     2: "invertovaným indexem",
     3: "využitím pouze důležitých konceptů",
-    4: "invertovaným idnexem nebo využitím pouze několika důležitých konceptů",
+    4: "invertovaným indexem nebo využitím pouze několika důležitých konceptů",
   },
   spravne: { 1: 0, 2: 0, 3: 1, 4: 0 },
   explanation:
@@ -390,7 +390,7 @@ INITIAL_QUESTIONS.push({
   otazka: "Editační vzdálenost (edit distance) slouží k měření podobností:",
   odpovedi: {
     1: "vektorů, kde měří nejmenší tzv. „vektorový edit“",
-    2: "řetězů, kde spočítá nejmenší počet operací nutných ke konverzi jednoho řetězce do druhého",
+    2: "řetězců, kde spočítá nejmenší počet operací nutných ke konverzi jednoho řetězce do druhého",
     3: "množin, kde spočítá nejmenší počet množinových operací nutných k transformaci jedné množiny do druhé",
     4: "téhož co DTW (je to pouze jiný název pro DTW)",
   },
@@ -405,7 +405,7 @@ INITIAL_QUESTIONS.push({
     1: "obsahuje logické spojky",
     2: "obsahuje váhy jednotlivých termů dotazu",
     3: "uživatel může zadat váhy všech termů v dotazu shodně",
-    4: "výsledek je založen na frakvenci výskytu termů v dokumentu a dotazu",
+    4: "výsledek je založen na frekvenci výskytu termů v dokumentu a dotazu",
   },
   spravne: { 1: 1, 2: 0, 3: 0, 4: 0 },
   explanation:
@@ -587,7 +587,7 @@ INITIAL_QUESTIONS.push({
 
 INITIAL_QUESTIONS.push({
   otazka:
-    "Kvadratická forma (quadratic form distance, QFD) je vhotná pro modelování podobnosti na vektorech když:",
+    "Kvadratická forma (quadratic form distance, QFD) je vhodná pro modelování podobnosti na vektorech když:",
   odpovedi: {
     1: "počet dimenzí vektoru odpovídá druhé mocnině celého čísla",
     2: "dimenze prostoru se předpokládají nekorelované, tj. nezávislé",
@@ -774,7 +774,7 @@ INITIAL_QUESTIONS.push({
     1: "omezená vyjadřovací schopnost",
     2: "setřídění výstupu ",
     3: "efektivita vyhodnocení řídkých dotazů",
-    4: "regulace počtu vrázených dokumentů",
+    4: "regulace počtu vrácených dokumentů",
   },
   spravne: { 1: 0, 2: 0, 3: 1, 4: 0 },
   explanation:
@@ -853,7 +853,7 @@ INITIAL_QUESTIONS.push({
     1: "je vhodný pro dotazování nad objekty u kterých uživatel zná sémantiku extrahovaných vektorů a sémantiku podobnostní funkce",
     2: "je vhodný pro dotazování nad objekty u kterých uživatel nezná sémantiku extrahovaných vektorů",
     3: "je vhodný pro dotazování nad objekty u kterých uživatel zná sémantiku extrahovaných vektorů",
-    4: "je vhodný pro dotazování nad objekty u kterách uživatel nezná sémantiku extrahovaných vektorů a sémantiku podobnostní funkce",
+    4: "je vhodný pro dotazování nad objekty u kterých uživatel nezná sémantiku extrahovaných vektorů a sémantiku podobnostní funkce",
   },
   spravne: { 1: 0, 2: 0, 3: 0, 4: 1 },
   explanation:
@@ -1353,6 +1353,76 @@ INITIAL_QUESTIONS.push({
   spravne: { 1: 1, 2: 0, 3: 0, 4: 0 },
   explanation:
     "Ve vektorovém modelu se normalizovaná TF používá jako komponenta váhy termu v dokumentu; následně se s tímto vektorem počítá podobnost k dotazu.",
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Co je hlavní podstatou permutačního indexu (v rámci metrického vyhledávání)?",
+  ai: true,
+  odpovedi: {
+    1: "Ukládání přesných souřadnic objektů v euklidovském prostoru.", // made up
+    2: "Nahrazení reálných vzdáleností k pivotům jejich pořadím (permutací).", // made up
+    3: "Použití bitových map pro uložení výskytu termů v dokumentech.", // made up
+    4: "Výpočet editační vzdálenosti mezi řetězci pomocí dynamického programování.", // made up
+  },
+  spravne: { 1: 0, 2: 1, 3: 0, 4: 0 },
+  explanation:
+    "Místo ukládání konkrétních vzdáleností (pivot table) se pro každý objekt uloží pouze pořadí pivotů (Πu) od nejbližšího po nejvzdálenější. Tím se geometrický problém mění na kombinatorický a výrazně se šetří místo.",
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Co je anotace (annotation) multimediálního objektu?",
+  ai: true,
+  odpovedi: {
+    1: "Interní matematický popis (např. barva pixelů).",
+    2: "Externí popis nesoucí sémantiku vysoké úrovně (high-level semantics).",
+    3: "Objektivní příznak, který je u objektu přítomen vždy.",
+    4: "Nízkoúrovňový deskriptor (low-level descriptor).",
+  },
+  spravne: { 1: 0, 2: 1, 3: 0, 4: 0 },
+  explanation:
+    "Podle prezentace je anotace definována jako 'external description, high-level semantics' a zahrnuje věci jako klíčová slova, GPS nebo textový popis.",
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Na čem závisí hodnota IDF (Inverse Document Frequency) pro konkrétní term?",
+  ai: true,
+  odpovedi: {
+    1: "Na celkovém počtu dokumentů v kolekci (N).",
+    2: "Na velikosti (délce) konkrétního dokumentu, ve kterém se term nachází.",
+    3: "Počítá se pro každý dokument zvlášť.",
+    4: "Na pořadí (pozici), v jakém se term v rámci dokumentu vyskytuje.",
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 },
+  explanation:
+    "Podle vzorce idf = log(N/df) je patrné, že IDF je globální statistika. Bere v potaz celkový počet dokumentů v databázi (N) a dokumentovou frekvenci termu (df). Nezávisí tedy na délce jednoho dokumentu ani se nepočítá pro každý dokument izolovaně.",
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Jak se vypočítá normovaná frekvence termu (normalized term frequency - tf_ij)?",
+  ai: true,
+  odpovedi: {
+    1: "Jako podíl četnosti termu v dokumentu a maximální četnosti jakéhokoliv termu v rámci téhož dokumentu.",
+    2: "Pomocí logaritmu, který tlumí vliv příliš vysoké četnosti termu v textu.",
+    3: "Jako průměrná četnost termu vypočítaná globálně přes všechny dokumenty v databázi.",
+    4: "Vydělením počtu dokumentů celkovým počtem slov v celé kolekci.",
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 },
+  explanation:
+    "Podle vzorce tf_ij = f_ij / max_j{f_ij} se normovaná TF počítá lokálně pro každý dokument. Četnost termu se dělí frekvencí nejčastějšího slova v daném dokumentu. Logaritmus (možnost 2) nebo výpočty přes celou kolekci (možnost 3 a 4) se u tohoto konkrétního vzorce nepoužívají.",
+});
+
+INITIAL_QUESTIONS.push({
+  otazka: "Co charakterizuje lokální pivoty (local pivots) v metrických indexech?",
+  ai: true,
+  odpovedi: {
+    1: "Jsou to dynamické objekty vybrané během indexování, přičemž pro různé části prostoru (shluky) se používají různé sady objektů.",
+    2: "Jsou to statické objekty, které jsou pevně určeny pro celou strukturu a jsou pro všechny regiony stejné.",
+    3: "Jsou to dynamické objekty, jejichž výběr se mění a přizpůsobuje přímo během výpočtu (běhu) jednoho konkrétního dotazu.",
+    4: "Jsou to sice dynamicky vytvořené objekty, ale musí zůstat stejné pro všechny výpočty v rámci jednoho dotazu.",
+  },
+  spravne: { 1: 1, 2: 0, 3: 0, 4: 0 },
+  explanation:
+    "Podle prezentace jsou lokální pivoty dynamické (vybírané během indexování, nikoliv pevně dané jako globální pivoty). Klíčové je, že každý dolní odhad (lower bound) může být konstruován za použití jiné sady objektů, typicky středů konkrétních shluků (centers of clusters).",
 });
 
 INITIAL_QUESTIONS.push({
