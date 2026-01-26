@@ -60,7 +60,8 @@
 
   paaApp.controller("NewsController", [
     "$scope",
-    function ($scope) {
+    "$document",
+    function ($scope, $document) {
       $scope.selection = [];
       $scope.userText = "";
       $scope.totalErrors = 0;
@@ -196,6 +197,53 @@
           $scope.selection.push(answer);
         }
       };
+
+      // Keyboard shortcuts
+      $document.on("keydown", function (e) {
+        // Ignore if user is typing in an input or textarea
+        if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") {
+          // Allow Ctrl+Enter or Meta+Enter to solve/continue even from textarea
+          if (!((e.ctrlKey || e.metaKey) && e.key === "Enter")) {
+            return;
+          }
+        }
+
+        var key = e.key;
+
+        // Space or Enter to solve/continue
+        if (key === " " || key === "Enter") {
+          // Don't prevent default for Enter if we are in textarea (handled by early return above,
+          // but if we are here it's either not textarea or it's Ctrl+Enter)
+          if (key === " ") e.preventDefault();
+
+          $scope.$apply(function () {
+            if (!$scope.ss) {
+              $scope.solve();
+            } else {
+              if ($scope.textAnswer) {
+                // If it's a text answer, we default to OK for "continue"
+                $scope.nextOK();
+              } else {
+                $scope.next();
+              }
+            }
+          });
+        }
+
+        // 1-9 for toggling options
+        if (key >= "1" && key <= "9") {
+          var index = parseInt(key) - 1;
+          if (index < $scope.question.length && !$scope.ss) {
+            $scope.$apply(function () {
+              $scope.toggleSelection($scope.question[index]);
+            });
+          }
+        }
+      });
+
+      $scope.$on("$destroy", function () {
+        $document.off("keydown");
+      });
     },
   ]);
 })(angular);
